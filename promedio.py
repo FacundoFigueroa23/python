@@ -1,13 +1,16 @@
-# Calculo de promedio
+# Calculador de promedio
 
 apellido = input("Ingrese Apellido: ")
 nombre = input("Ingrese Nombre: ")
 
-nota1 = int(input("1° Nota:"))
-nota2 = int(input("2° Nota:"))
-nota3 = int(input("3° Nota:"))
+notas = int(input("Ingrese la cantidad de notas: "))
 
-promedio = (nota1 + nota2 + nota3)/3
+suma = 0
+
+for n in range(notas) :
+    suma += int(input("Ingrese nota: "))
+
+promedio = suma/notas
 
 if (promedio >= 8) :
     print("El alumno", nombre, apellido, "promocionó con un promedio de", round(promedio, 2))
