@@ -1,0 +1,32 @@
+{% include "admin/navbar.html" %}
+    <div class="container">
+        <div class="row align-items-md-stretch">
+            <div class="col-md-5">
+                <div class="card">
+                    <div class="card-header">Datos del libro</div>
+                    <div class="card-body">
+                        <form action="/admin/libros/guardar" method="post" enctype="multipart/form-data">
+                            <div class="mb-3">
+                                <label for="nombreLibro" class="form-label">Nombre</label>
+                                <input type="text" class="form-control" name="nombreLibro" id="nombreLibro" aria-describedby="helpId" placeholder="Escriba el nombre del libro">
+                            </div>
+                            <div class="mb-3">
+                                <label for="libro" class="form-label">Imagen</label>
+                                <input type="file" class="form-control" name="libro" id="libro" aria-describedby="helpId" placeholder="Seleccione la imagen">
+                            </div>
+                            <div class="mb-3">
+                                <label for="libroUrl" class="form-label">URL Descarga</label>
+                                <input type="text" class="form-control" name="libroUrl" id="libroUrl" aria-describedby="helpId" placeholder="Escribe la URL de descarga">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Agregar</button>
+                        </form>
+                    </div>
+                    <div class="card-footer text-muted"></div>
+                </div>
+            </div>
+            <div class="col-md-5">
+                
+            </div>
+        </div>
+    </div>
+{% include "admin/footer.html" %}
