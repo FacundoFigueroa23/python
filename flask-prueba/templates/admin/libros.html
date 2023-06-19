@@ -21,11 +21,29 @@
                             <button type="submit" class="btn btn-primary">Agregar</button>
                         </form>
                     </div>
-                    <div class="card-footer text-muted"></div>
                 </div>
             </div>
-            <div class="col-md-5">
-                
+            <div class="col-md-7">
+                <table class="table table-hover table-bordered align-middle">
+                    <thead>
+                        <tr class="table-primary">
+                            <th scope="col">Id</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Archivo</th>
+                            <th scope="col">URL</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for libro in data %}
+                        <tr>
+                            <th scope="row">{{libro[0]}}</th>
+                            <td>{{libro[1]}}</td>
+                            <td>{{libro[2]}}</td>
+                            <td>{{libro[3]}}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>

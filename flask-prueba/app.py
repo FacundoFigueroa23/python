@@ -32,7 +32,12 @@ def admin_login() :
 @app.route("/admin/libros")
 def admin_libros() :
     conexion = mysql.connect()
-    return render_template("admin/libros.html")
+    cursor = conexion.cursor()
+    cursor.execute("SELECT * FROM `libros`")
+    data = cursor.fetchall()
+    # print("Data:", data)
+    # print(data[0][1])
+    return render_template("admin/libros.html", data = data)
 
 @app.route("/admin/libros/guardar", methods=["POST"])
 def admin_libros_guardar() :
