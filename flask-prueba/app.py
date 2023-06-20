@@ -15,7 +15,11 @@ def inicio() :
 
 @app.route("/libros")
 def libros() :
-    return render_template("sitio/libros.html")
+    conexion = mysql.connect()
+    cursor = conexion.cursor()
+    cursor.execute("SELECT * FROM `libros`")
+    data = cursor.fetchall()
+    return render_template("sitio/libros.html", data = data)
 
 @app.route("/nosotros")
 def nosotros() :

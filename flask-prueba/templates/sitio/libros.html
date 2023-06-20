@@ -1,7 +1,20 @@
 {% include "sitio/navbar.html" %}
-    <h1>Seccion de libros</h1>
+    <h1 class="text-center">Mis Libros</h1>
     <div class="row">
+        {% for libro in data %}
         <div class="col-md-3">
+            <div class="card">
+                <img class="card-img-top" src="{{libro[3]}}" alt="{{libro[1]}}">
+                <div class="card-body">
+                    <h4 class="card-title">{{libro[1]}}</h4>
+                    <p class="card-text">
+                        <a href="{{libro[3]}}" target="_blank" class="btn btn-primary">Descargar</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        <!-- <div class="col-md-3">
             <div class="card">
                 <img class="card-img-top" src="https://th.bing.com/th/id/R.ed1d7355a9bb9460f4085b5ef695740f?rik=c0C20pwiGFzlOQ&riu=http%3a%2f%2fwww.cartoonbucket.com%2fwp-content%2fuploads%2f2017%2f03%2fPicture-Of-Goku.png&ehk=6umgOjjWb%2fvPd3MvvIjCJ4eMWLo6DhFn8JDCrQ5QVt8%3d&risl=&pid=ImgRaw&r=0" alt="Title">
                 <div class="card-body">
@@ -44,6 +57,6 @@
                     </p>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
 {% include "sitio/footer.html" %}
